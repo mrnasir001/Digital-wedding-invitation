@@ -8,22 +8,226 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Our Nikah Invitation</title>
+    <title>Wedding Invitation</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <style>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+        body {
+            background: #071a2f;
+            color: #f5d78e;
+            font-family: Georgia, serif;
+            text-align: center;
+        }
 
-    <!-- Our CSS -->
-    <link rel="stylesheet"
-          href="style.css">
+        /* Opening Screen */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Gold border */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 20px;
+
+            border: 1px solid #d6aa50;
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 700px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .arabic {
+            font-size: 25px;
+
+            margin-bottom: 25px;
+        }
+
+        .small-text {
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 55px;
+
+            letter-spacing: 5px;
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+        }
+
+        .message {
+            color: #fff4dc;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+        }
+
+        .nikah {
+            font-family: cursive;
+
+            font-size: 35px;
+
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 35px;
+
+            background: transparent;
+
+            border: 1px solid #d6aa50;
+
+            color: #f5d78e;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d6aa50;
+
+            color: #071a2f;
+        }
+
+        /* Main Invitation */
+
+        #invitation {
+            display: none;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .cream {
+            background: #f7ecd7;
+
+            color: #49321d;
+        }
+
+        .navy {
+            background: #071a2f;
+
+            color: white;
+        }
+
+        h2 {
+            font-size: 35px;
+
+            margin-bottom: 25px;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        /* Couple */
+
+        .couple-box {
+            margin: 25px auto;
+
+            max-width: 350px;
+
+            padding: 35px;
+
+            border: 1px solid #d6aa50;
+        }
+
+        .couple-box h3 {
+            color: #f5d78e;
+
+            font-size: 32px;
+
+            font-family: cursive;
+
+            margin-bottom: 10px;
+        }
+
+        /* Events */
+
+        .event {
+            max-width: 400px;
+
+            margin: 20px auto;
+
+            padding: 25px;
+
+            background: white;
+
+            border: 1px solid #d6aa50;
+        }
+
+        .event h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 50px 20px;
+
+            background: #071a2f;
+
+            color: #f5d78e;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .arabic {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 29px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -31,735 +235,274 @@
 <body>
 
 
-<!-- =====================================================
-     OPENING SCREEN
-===================================================== -->
+<!-- =========================
+     OPENING
+     ========================= -->
 
-<!-- =========================================
-     ROYAL ISLAMIC HERO
-     ========================================= -->
-
-<div class="opening" id="opening">
-
-    <!-- Decorative frame -->
-    <div class="hero-frame"></div>
-
-    <!-- Hanging lanterns -->
-    <div class="lantern lantern-1">
-        <span></span>
-    </div>
-
-    <div class="lantern lantern-2">
-        <span></span>
-    </div>
-
-    <div class="lantern lantern-3">
-        <span></span>
-    </div>
-
-    <div class="lantern lantern-4">
-        <span></span>
-    </div>
-
-
-    <!-- Decorative flowers -->
-    <div class="hero-flower flower-left">
-        ✿
-    </div>
-
-    <div class="hero-flower flower-right">
-        ✿
-    </div>
-
-
-    <!-- Main Hero -->
-
-    <div class="opening-box">
-
-        <div class="arabic">
-            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-        </div>
-
-        <p class="small">
-            TOGETHER WITH THEIR FAMILIES
-        </p>
-
-        <h1>
-            WEDDING
-            <br>
-            INVITATION
-        </h1>
-
-        <div class="hero-divider">
-            <span>◆</span>
-            <span>♥</span>
-            <span>◆</span>
-        </div>
-
-        <p class="hero-message">
-            WE INVITE YOU TO JOIN US IN CELEBRATING
-            <br>
-            THE BEGINNING OF OUR NEW JOURNEY
-        </p>
-
-        <div class="nikah-title">
-            Nikah Ceremony
-        </div>
-
-        <button
-            class="open-button"
-            onclick="openInvitation()">
-
-            OPEN INVITATION
-            <span>♥</span>
-
-        </button>
-
-    </div>
-
-
-    <!-- Mosque skyline -->
-
-    <div class="mosque">
-
-        <div class="dome dome-main">
-            <div class="crescent">☾</div>
-        </div>
-
-        <div class="dome dome-left"></div>
-
-        <div class="dome dome-right"></div>
-
-        <div class="minaret minaret-left"></div>
-
-        <div class="minaret minaret-right"></div>
-
-        <div class="minaret minaret-small-left"></div>
-
-        <div class="minaret minaret-small-right"></div>
-
-    </div>
-
-</div>
-
-
-    <!-- Hero -->
+<div class="hero">
 
     <div class="hero-content">
 
-
         <div class="arabic">
             بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
         </div>
 
-
-        <p class="hero-small">
+        <div class="small-text">
             TOGETHER WITH THEIR FAMILIES
-        </p>
-
+        </div>
 
         <h1>
-            WEDDING
-            <br>
+            WEDDING<br>
             INVITATION
         </h1>
 
+        <div class="message">
 
-        <div class="ornament">
-            ── ❖ ♡ ❖ ──
+            We invite you to join us
+            in celebrating the beginning
+            of our new journey.
+
         </div>
 
-
-        <p class="hero-message">
-            WE INVITE YOU TO JOIN US IN CELEBRATING
-            <br>
-            THE BEGINNING OF OUR NEW JOURNEY
-        </p>
-
-
-        <div class="nikah-title">
+        <div class="nikah">
             Nikah Ceremony
         </div>
 
-
-        <button
-            class="open-button"
-            onclick="openInvitation()">
-
+        <button onclick="openInvitation()">
             OPEN INVITATION
-            <span>♥</span>
-
         </button>
 
-
     </div>
 
+</div>
 
-    <!-- Mosque skyline -->
 
-    <div class="mosque">
+<!-- =========================
+     INVITATION
+     ========================= -->
 
-        <div class="dome dome-small"></div>
+<div id="invitation">
 
-        <div class="minaret minaret-1"></div>
 
-        <div class="minaret minaret-2"></div>
+    <!-- Welcome -->
 
-        <div class="dome dome-main"></div>
+    <section class="cream">
 
-        <div class="minaret minaret-3"></div>
+        <h2>
+            We Are Getting Married
+        </h2>
 
-        <div class="minaret minaret-4"></div>
+        <p>
+            With the blessings of our families,
+            we begin a beautiful new chapter
+            of our lives.
+        </p>
 
-        <div class="mosque-base"></div>
+    </section>
 
-    </div>
+
+    <!-- Couple -->
+
+    <section class="navy">
+
+        <h2>
+            The Couple
+        </h2>
+
+        <div class="couple-box">
+
+            <h3>
+                Bride Name
+            </h3>
+
+            <p>
+                Daughter of Mr. & Mrs. Bride Family
+            </p>
+
+        </div>
+
+
+        <div style="font-size:35px;">
+            ♥
+        </div>
+
+
+        <div class="couple-box">
+
+            <h3>
+                Groom Name
+            </h3>
+
+            <p>
+                Son of Mr. & Mrs. Groom Family
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Date -->
+
+    <section class="cream">
+
+        <h2>
+            Save The Date
+        </h2>
+
+        <p>
+            25 December 2026
+        </p>
+
+        <p>
+            7:00 PM
+        </p>
+
+    </section>
+
+
+    <!-- Events -->
+
+    <section class="cream">
+
+        <h2>
+            Wedding Events
+        </h2>
+
+        <div class="event">
+
+            <h3>
+                Mehndi
+            </h3>
+
+            <p>
+                23 December 2026
+            </p>
+
+            <p>
+                5:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>
+                Haldi
+            </h3>
+
+            <p>
+                24 December 2026
+            </p>
+
+            <p>
+                11:00 AM
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>
+                Nikah Ceremony
+            </h3>
+
+            <p>
+                25 December 2026
+            </p>
+
+            <p>
+                7:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="event">
+
+            <h3>
+                Reception
+            </h3>
+
+            <p>
+                26 December 2026
+            </p>
+
+            <p>
+                7:30 PM
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Venue -->
+
+    <section class="navy">
+
+        <h2>
+            Wedding Venue
+        </h2>
+
+        <p>
+            Your Wedding Venue
+        </p>
+
+        <p>
+            Chandigarh, India
+        </p>
+
+    </section>
+
+
+    <!-- Closing -->
+
+    <section class="cream">
+
+        <h2>
+            We Can't Wait To Celebrate With You
+        </h2>
+
+        <p>
+            Your presence will make our special
+            day even more memorable.
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            With Love ♥
+        </p>
+
+        <p>
+            Bride Name & Groom Name
+        </p>
+
+    </footer>
 
 
 </div>
 
 
+<script>
 
-<!-- =====================================================
-     MAIN INVITATION
-===================================================== -->
+function openInvitation() {
 
-<main id="invitation">
+    document.querySelector(".hero").style.display = "none";
 
+    document.querySelector("#invitation").style.display = "block";
 
-<!-- =====================================================
-     WELCOME
-===================================================== -->
+    window.scrollTo(0, 0);
 
-<section class="welcome">
+}
 
-
-    <div class="ornamental-corner top-left">
-        ❧
-    </div>
-
-    <div class="ornamental-corner top-right">
-        ❧
-    </div>
-
-
-    <div class="section-inner">
-
-
-        <div class="arabic-dark">
-            وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ
-        </div>
-
-
-        <p class="section-label">
-            WITH THE BLESSINGS OF ALLAH
-        </p>
-
-
-        <h2>
-            WE ARE GETTING MARRIED
-        </h2>
-
-
-        <div class="gold-divider">
-            ❖ ── ♥ ── ❖
-        </div>
-
-
-        <p class="welcome-text">
-            Two hearts. Two families.
-            One beautiful beginning.
-        </p>
-
-
-        <p class="welcome-text">
-            We request the honour of your presence
-            and prayers on our special day.
-        </p>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     COUPLE
-===================================================== -->
-
-<section class="couple">
-
-
-    <div class="section-inner">
-
-
-        <div class="couple-grid">
-
-
-            <!-- Bride -->
-
-            <div class="person-card">
-
-                <div class="person-ring">
-
-                    <div class="person-content">
-
-                        <p class="person-label">
-                            BRIDE
-                        </p>
-
-                        <h3>
-                            Bride Name
-                        </h3>
-
-                        <p>
-                            Daughter of
-                        </p>
-
-                        <p>
-                            Mr. & Mrs. Bride Parents
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Center ornament -->
-
-            <div class="couple-center">
-
-                <div class="allah-symbol">
-                    الله
-                </div>
-
-                <div class="small-heart">
-                    ♥
-                </div>
-
-            </div>
-
-
-            <!-- Groom -->
-
-            <div class="person-card">
-
-                <div class="person-ring">
-
-                    <div class="person-content">
-
-                        <p class="person-label">
-                            GROOM
-                        </p>
-
-                        <h3>
-                            Groom Name
-                        </h3>
-
-                        <p>
-                            Son of
-                        </p>
-
-                        <p>
-                            Mr. & Mrs. Groom Parents
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     WEDDING EVENTS
-===================================================== -->
-
-<section class="events">
-
-
-    <div class="section-inner">
-
-
-        <h2>
-            WEDDING EVENTS
-        </h2>
-
-
-        <div class="gold-divider">
-            ❖ ───────── ❖
-        </div>
-
-
-        <div class="event-grid">
-
-
-            <!-- Mehndi -->
-
-            <div class="event-card">
-
-                <div class="event-icon">
-                    ✋
-                </div>
-
-                <h3>
-                    MEHNDI
-                </h3>
-
-                <div class="event-line"></div>
-
-                <p>
-                    23 DECEMBER 2026
-                </p>
-
-                <p>
-                    WEDNESDAY
-                </p>
-
-                <strong>
-                    05:00 PM
-                </strong>
-
-                <p class="event-venue">
-                    📍 VENUE NAME
-                </p>
-
-            </div>
-
-
-            <!-- Haldi -->
-
-            <div class="event-card">
-
-                <div class="event-icon">
-                    🪷
-                </div>
-
-                <h3>
-                    HALDI
-                </h3>
-
-                <div class="event-line"></div>
-
-                <p>
-                    24 DECEMBER 2026
-                </p>
-
-                <p>
-                    THURSDAY
-                </p>
-
-                <strong>
-                    11:00 AM
-                </strong>
-
-                <p class="event-venue">
-                    📍 VENUE NAME
-                </p>
-
-            </div>
-
-
-            <!-- Nikah -->
-
-            <div class="event-card">
-
-                <div class="event-icon">
-                    🕌
-                </div>
-
-                <h3>
-                    NIKAH CEREMONY
-                </h3>
-
-                <div class="event-line"></div>
-
-                <p>
-                    25 DECEMBER 2026
-                </p>
-
-                <p>
-                    FRIDAY
-                </p>
-
-                <strong>
-                    07:00 PM
-                </strong>
-
-                <p class="event-venue">
-                    📍 VENUE NAME
-                </p>
-
-            </div>
-
-
-            <!-- Reception -->
-
-            <div class="event-card">
-
-                <div class="event-icon">
-                    ◉
-                </div>
-
-                <h3>
-                    RECEPTION
-                </h3>
-
-                <div class="event-line"></div>
-
-                <p>
-                    26 DECEMBER 2026
-                </p>
-
-                <p>
-                    SATURDAY
-                </p>
-
-                <strong>
-                    07:30 PM
-                </strong>
-
-                <p class="event-venue">
-                    📍 VENUE NAME
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     VENUE + COUNTDOWN
-===================================================== -->
-
-<section class="venue-countdown">
-
-
-    <div class="venue-box">
-
-
-        <div class="venue-decoration">
-            🕌
-        </div>
-
-
-        <h2>
-            WEDDING VENUE
-        </h2>
-
-
-        <div class="venue-name">
-            Your Wedding Venue
-        </div>
-
-
-        <p>
-            Address Line, City, State - 000000
-        </p>
-
-
-        <p>
-            India
-        </p>
-
-
-        <a
-            href="https://maps.google.com"
-            target="_blank"
-            class="location-button">
-
-            VIEW LOCATION
-            📍
-
-        </a>
-
-
-    </div>
-
-
-
-    <div class="countdown-box-area">
-
-
-        <h2>
-            COUNTDOWN TO OUR NIKAH
-        </h2>
-
-
-        <div class="countdown">
-
-
-            <div class="time-box">
-
-                <span id="days">
-                    00
-                </span>
-
-                <small>
-                    DAYS
-                </small>
-
-            </div>
-
-
-            <div class="time-box">
-
-                <span id="hours">
-                    00
-                </span>
-
-                <small>
-                    HOURS
-                </small>
-
-            </div>
-
-
-            <div class="time-box">
-
-                <span id="minutes">
-                    00
-                </span>
-
-                <small>
-                    MINUTES
-                </small>
-
-            </div>
-
-
-            <div class="time-box">
-
-                <span id="seconds">
-                    00
-                </span>
-
-                <small>
-                    SECONDS
-                </small>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     RSVP
-===================================================== -->
-
-<section class="rsvp">
-
-
-    <div class="rsvp-decoration">
-        ✦
-    </div>
-
-
-    <div class="section-inner">
-
-
-        <div class="quran-decoration">
-            📖
-        </div>
-
-
-        <h2>
-            We Can't Wait to
-            <br>
-            Celebrate With You
-        </h2>
-
-
-        <div class="gold-divider">
-            ❖ ── ♥ ── ❖
-        </div>
-
-
-        <p>
-            Your presence and prayers will make
-            our day even more special.
-        </p>
-
-
-        <button
-            class="rsvp-button"
-            onclick="rsvp()">
-
-            RSVP NOW
-            ♥ 
-
-        </button>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-
-    <div class="footer-arabic">
-        جَزَاكُمُ اللَّهُ خَيْرًا
-    </div>
-
-
-    <p>
-        THANK YOU FOR BEING A PART
-        OF OUR HAPPINESS
-    </p>
-
-
-    <div class="footer-heart">
-        ♥
-    </div>
-
-
-</footer>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script src="script.js"></script>
+</script>
 
 
 </body>
