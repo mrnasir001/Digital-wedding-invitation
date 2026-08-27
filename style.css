@@ -931,9 +931,7 @@ body {
    ===================================================== */
 
 .opening-box::after {
-    content:
-        "🏮        🏮        🏮";
-
+   
     white-space: pre;
 
     position: absolute;
@@ -1013,7 +1011,6 @@ body {
 
 .opening-box::before {
 
-    content: "☾ ۞ ☽";
 
     display: block;
 
