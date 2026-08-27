@@ -1,1 +1,978 @@
 
+/* =========================================
+   ROYAL + ISLAMIC NIKAH WEDDING INVITATION
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    background: #f5ead5;
+    color: #24180d;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+
+/* ---------- GOLD VARIABLES ---------- */
+
+:root {
+    --navy: #071a2f;
+    --navy-light: #102b49;
+    --gold: #d6a84f;
+    --gold-light: #f3d58a;
+    --cream: #f8efd9;
+    --cream-dark: #e9d5ad;
+    --brown: #382514;
+}
+
+
+/* =========================================
+   OPENING SCREEN
+   ========================================= */
+
+.opening {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(214,168,79,0.18),
+            transparent 45%
+        ),
+        var(--navy);
+}
+
+
+/* Islamic geometric background */
+
+.opening::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid rgba(214,168,79,0.55);
+
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 20px,
+            rgba(214,168,79,0.05) 21px,
+            transparent 22px
+        );
+
+    pointer-events: none;
+}
+
+
+/* Golden decorative circles */
+
+.opening::after {
+    content: "☾";
+
+    position: absolute;
+
+    top: 40px;
+    right: 35px;
+
+    font-size: 60px;
+
+    color: var(--gold);
+
+    opacity: 0.7;
+
+    animation: moonFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes moonFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* ---------- OPENING CONTENT ---------- */
+
+.opening-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 65px 30px;
+
+    border: 1px solid var(--gold);
+
+    background:
+        linear-gradient(
+            rgba(7,26,47,0.92),
+            rgba(7,26,47,0.92)
+        );
+
+    box-shadow:
+        0 0 40px rgba(214,168,79,0.18),
+        inset 0 0 35px rgba(214,168,79,0.08);
+
+    animation: openingAppear 1.5s ease forwards;
+}
+
+
+@keyframes openingAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Top Arabic-style decorative element */
+
+.opening-box::before {
+    content: "۞";
+
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+
+    animation: goldGlow 2.5s infinite;
+}
+
+
+@keyframes goldGlow {
+
+    0%, 100% {
+        opacity: 0.65;
+        text-shadow: none;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px rgba(243,213,138,0.8);
+    }
+}
+
+
+.opening-box .small {
+    font-family: "Cinzel", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--gold-light);
+
+    margin-bottom: 20px;
+}
+
+
+.opening-box h1 {
+    font-family: "Cinzel", serif;
+
+    font-size: 44px;
+
+    letter-spacing: 4px;
+
+    color: var(--gold-light);
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,0.5);
+}
+
+
+/* ---------- NAMES ---------- */
+
+.names {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 52px;
+
+    line-height: 1.4;
+
+    color: #fff5d9;
+}
+
+
+.ampersand {
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    color: var(--gold);
+
+    margin: 4px 0;
+}
+
+
+.wedding-date {
+    font-family: "Cinzel", serif;
+
+    letter-spacing: 3px;
+
+    color: var(--gold-light);
+
+    margin: 30px 0;
+}
+
+
+/* ---------- OPEN BUTTON ---------- */
+
+.open-button {
+    position: relative;
+
+    padding: 15px 35px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: var(--gold-light);
+
+    font-family: "Cinzel", serif;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    overflow: hidden;
+}
+
+
+.open-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(214,168,79,0.18);
+
+    transition: 0.5s;
+}
+
+
+.open-button:hover::before {
+    left: 0;
+}
+
+
+.open-button:hover {
+    box-shadow:
+        0 0 20px rgba(214,168,79,0.4);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   MAIN INVITATION
+   ========================================= */
+
+#invitation {
+    background: var(--cream);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+section {
+    position: relative;
+
+    padding: 90px 20px;
+
+    overflow: hidden;
+}
+
+
+.content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* Decorative gold line */
+
+.content::before {
+    content: "✦";
+
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   WELCOME
+   ========================================= */
+
+.welcome {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(214,168,79,0.12),
+            transparent 50%
+        ),
+        var(--cream);
+}
+
+
+.welcome h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 36px;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+    margin: 20px 0;
+}
+
+
+.welcome p {
+    max-width: 650px;
+
+    margin: 12px auto;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   COUPLE
+   ========================================= */
+
+.couple {
+    background: var(--navy);
+
+    color: white;
+
+    border-top: 1px solid var(--gold);
+
+    border-bottom: 1px solid var(--gold);
+}
+
+
+.couple h2 {
+    font-family: "Cinzel", serif;
+
+    color: var(--gold-light);
+
+    font-size: 34px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 45px;
+}
+
+
+.person {
+    display: inline-block;
+
+    width: 40%;
+
+    min-width: 250px;
+
+    margin: 20px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(214,168,79,0.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(214,168,79,0.08),
+            transparent
+        );
+
+    transition: 0.5s;
+}
+
+
+.person:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 30px rgba(214,168,79,0.15);
+}
+
+
+.person h3 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 40px;
+
+    color: var(--gold-light);
+
+    margin-bottom: 12px;
+}
+
+
+.person p {
+    color: #eee;
+
+    line-height: 1.7;
+}
+
+
+.heart {
+    display: inline-block;
+
+    font-size: 35px;
+
+    color: var(--gold);
+
+    animation: heartBeat 1.8s infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================
+   DATE
+   ========================================= */
+
+.date-section {
+    background: var(--navy-light);
+
+    color: white;
+
+    border-bottom: 1px solid var(--gold);
+}
+
+
+.date-section h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 42px;
+
+    color: var(--gold-light);
+
+    letter-spacing: 3px;
+
+    margin: 25px;
+}
+
+
+.date-section p {
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   EVENTS
+   ========================================= */
+
+.events {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(214,168,79,0.08),
+            transparent 50%
+        ),
+        var(--cream);
+}
+
+
+.events h2 {
+    font-family: "Cinzel", serif;
+
+    color: var(--brown);
+
+    font-size: 34px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 40px;
+}
+
+
+.event-card {
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: top;
+
+    width: 44%;
+
+    min-width: 280px;
+
+    margin: 12px;
+
+    padding: 35px 20px;
+
+    background: #fffaf0;
+
+    border: 1px solid var(--gold);
+
+    box-shadow:
+        0 10px 25px rgba(60,40,20,0.08);
+
+    transition: 0.5s;
+}
+
+
+.event-card::before {
+    content: "✦";
+
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.event-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(60,40,20,0.15);
+}
+
+
+.event-card h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 22px;
+
+    color: var(--brown);
+
+    margin-bottom: 15px;
+}
+
+
+.event-card p {
+    margin: 7px;
+
+    color: #5a4733;
+}
+
+
+/* =========================================
+   VENUE
+   ========================================= */
+
+.venue {
+    background: var(--navy);
+
+    color: white;
+}
+
+
+.venue h2 {
+    font-family: "Cinzel", serif;
+
+    color: var(--gold-light);
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+
+.venue p {
+    margin: 10px;
+
+    color: #eee;
+}
+
+
+.button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: var(--gold-light);
+
+    text-decoration: none;
+
+    font-family: "Cinzel", serif;
+
+    letter-spacing: 1px;
+
+    transition: 0.4s;
+}
+
+
+.button:hover {
+    background: var(--gold);
+
+    color: var(--navy);
+
+    box-shadow:
+        0 0 20px rgba(214,168,79,0.35);
+}
+
+
+/* =========================================
+   COUNTDOWN
+   ========================================= */
+
+.countdown-section {
+    background: var(--navy-light);
+
+    color: white;
+}
+
+
+.countdown-section h2 {
+    font-family: "Cinzel", serif;
+
+    color: var(--gold-light);
+
+    font-size: 30px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 40px;
+}
+
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.countdown-box {
+    width: 100px;
+
+    padding: 20px 8px;
+
+    background: rgba(7,26,47,0.8);
+
+    border: 1px solid rgba(214,168,79,0.6);
+
+    transition: 0.4s;
+}
+
+
+.countdown-box:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 20px rgba(214,168,79,0.2);
+}
+
+
+.countdown-box span {
+    display: block;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 30px;
+
+    color: var(--gold-light);
+
+    font-weight: 600;
+}
+
+
+.countdown-box small {
+    color: white;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   RSVP
+   ========================================= */
+
+.rsvp {
+    background: var(--cream);
+}
+
+
+.rsvp h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 45px;
+
+    color: var(--brown);
+
+    margin-bottom: 20px;
+}
+
+
+.rsvp p {
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    position: relative;
+
+    background: var(--navy);
+
+    color: white;
+
+    padding: 50px 20px;
+
+    border-top: 1px solid var(--gold);
+}
+
+
+footer p:first-child {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 32px;
+
+    color: var(--gold-light);
+}
+
+
+footer p:last-child {
+    margin-top: 12px;
+
+    color: #ddd;
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+
+section {
+    animation: sectionAppear linear both;
+
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 25%;
+}
+
+
+@keyframes sectionAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE DESIGN
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .opening {
+        padding: 15px;
+    }
+
+
+    .opening-box {
+        padding: 50px 18px;
+    }
+
+
+    .opening-box h1 {
+        font-size: 31px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .opening-box .small {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .names {
+        font-size: 43px;
+    }
+
+
+    .wedding-date {
+        font-size: 14px;
+    }
+
+
+    section {
+        padding: 70px 16px;
+    }
+
+
+    .welcome h2,
+    .events h2,
+    .venue h2 {
+        font-size: 27px;
+    }
+
+
+    .date-section h2 {
+        font-size: 28px;
+
+        margin: 20px 0;
+    }
+
+
+    .person {
+        width: 90%;
+
+        min-width: 0;
+
+        margin: 12px auto;
+    }
+
+
+    .person h3 {
+        font-size: 35px;
+    }
+
+
+    .event-card {
+        display: block;
+
+        width: 100%;
+
+        min-width: 0;
+
+        margin: 15px auto;
+    }
+
+
+    .countdown {
+        gap: 8px;
+    }
+
+
+    .countdown-box {
+        width: 72px;
+
+        padding: 16px 4px;
+    }
+
+
+    .countdown-box span {
+        font-size: 22px;
+    }
+
+
+    .countdown-box small {
+        font-size: 11px;
+    }
+
+
+    .rsvp h2 {
+        font-size: 38px;
+    }
+
+}
