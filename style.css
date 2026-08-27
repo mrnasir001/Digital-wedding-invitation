@@ -64,101 +64,868 @@ body {
    OPENING / HERO
    ===================================================== */
 
+/* =====================================================
+   ROYAL ISLAMIC HERO
+   ===================================================== */
+
 .opening {
+
     min-height: 100vh;
 
     position: relative;
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
+
+    align-items: center;
 
     overflow: hidden;
 
     background:
+
         radial-gradient(
-            circle at 50% 45%,
-            rgba(214,166,63,.18),
-            transparent 32%
+            circle at 50% 40%,
+            rgba(218,169,70,.18),
+            transparent 28%
         ),
-        radial-gradient(
-            circle at 20% 80%,
-            rgba(214,166,63,.12),
-            transparent 25%
-        ),
+
         linear-gradient(
             180deg,
-            #020c19,
-            #06172b 60%,
-            #0b2542
+            #020b17 0%,
+            #06172b 65%,
+            #0b2947 100%
         );
 
     color: white;
 }
 
 
-/* Islamic pattern */
+/* Very subtle Islamic pattern */
 
 .opening::before {
+
     content: "";
 
     position: absolute;
 
     inset: 0;
 
-    opacity: .20;
+    opacity: .08;
 
     background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0,
-            transparent 18px,
-            rgba(213,166,63,.35) 19px,
-            transparent 20px
+
+        linear-gradient(
+            30deg,
+            #d6a84f 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #d6a84f 87.5%,
+            #d6a84f
         ),
-        repeating-linear-gradient(
-            -45deg,
-            transparent 0,
-            transparent 18px,
-            rgba(213,166,63,.25) 19px,
-            transparent 20px
+
+        linear-gradient(
+            150deg,
+            #d6a84f 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #d6a84f 87.5%,
+            #d6a84f
         );
+
+    background-size: 80px 140px;
 
     pointer-events: none;
 }
 
 
-/* Large Islamic arch */
+/* =====================================================
+   GOLD FRAME
+   ===================================================== */
 
-.opening::after {
+.hero-frame {
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(221,177,83,.75);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.hero-frame::before {
+
     content: "";
 
     position: absolute;
 
-    width: 90vw;
-    height: 90vh;
+    inset: 12px;
 
-    max-width: 1100px;
+    border: 1px solid rgba(221,177,83,.3);
 
-    left: 50%;
-    top: 7%;
-
-    transform: translateX(-50%);
-
-    border: 3px solid rgba(213,166,63,.75);
-
-    border-bottom: none;
-
-    border-radius: 500px 500px 0 0;
-
-    box-shadow:
-        0 0 30px rgba(213,166,63,.15),
-        inset 0 0 30px rgba(213,166,63,.05);
-
-    pointer-events: none;
 }
 
 
+/* Corner ornaments */
+
+.hero-frame::after {
+
+    content: "❧";
+
+    position: absolute;
+
+    top: -8px;
+
+    left: -5px;
+
+    font-size: 65px;
+
+    color: #d6a84f;
+
+    transform: rotate(-45deg);
+
+    text-shadow:
+        0 0 12px rgba(214,168,79,.5);
+}
+
+
+/* =====================================================
+   ISLAMIC ARCH
+   ===================================================== */
+
+.opening {
+
+    isolation: isolate;
+}
+
+
+.opening-box {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(850px, 90%);
+
+    padding: 65px 30px 120px;
+
+    text-align: center;
+
+    animation: heroReveal 1.5s ease both;
+}
+
+
+@keyframes heroReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+/* Large pointed Islamic arch behind text */
+
+.opening-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    left: 50%;
+
+    top: 25px;
+
+    transform: translateX(-50%);
+
+    width: min(720px, 95%);
+
+    height: 650px;
+
+    border:
+
+        3px solid
+        rgba(218,169,70,.75);
+
+    border-bottom: none;
+
+    border-radius:
+
+        50%
+        50%
+        0
+        0;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(218,169,70,.10);
+
+    clip-path: polygon(
+        0 100%,
+        0 30%,
+        15% 12%,
+        35% 4%,
+        50% 0,
+        65% 4%,
+        85% 12%,
+        100% 30%,
+        100% 100%
+    );
+}
+
+
+/* =====================================================
+   ARABIC
+   ===================================================== */
+
+.arabic {
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    color: #f0cb76;
+
+    font-size: 26px;
+
+    direction: rtl;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+
+        0 0 12px
+        rgba(240,203,118,.3);
+
+    animation: softGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes softGlow {
+
+    0%,100% {
+        opacity: .8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   HERO TEXT
+   ===================================================== */
+
+.opening-box .small {
+
+    font-family: "Cinzel", serif;
+
+    color: #e7c879;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+
+.opening-box h1 {
+
+    font-family: "Cinzel", serif;
+
+    color: #f0cb76;
+
+    font-size: clamp(
+        42px,
+        7vw,
+        76px
+    );
+
+    line-height: 1.08;
+
+    letter-spacing: 6px;
+
+    margin: 0;
+
+    text-shadow:
+
+        0 3px 15px
+        rgba(0,0,0,.7),
+
+        0 0 20px
+        rgba(218,169,70,.15);
+}
+
+
+/* =====================================================
+   DIVIDER
+   ===================================================== */
+
+.hero-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin: 22px auto;
+
+    color: #d6a84f;
+
+    font-size: 14px;
+}
+
+
+.hero-divider::before,
+.hero-divider::after {
+
+    content: "";
+
+    width: 75px;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            to right,
+            transparent,
+            #d6a84f
+        );
+}
+
+
+.hero-divider::after {
+
+    background:
+
+        linear-gradient(
+            to left,
+            transparent,
+            #d6a84f
+        );
+}
+
+
+/* =====================================================
+   HERO MESSAGE
+   ===================================================== */
+
+.hero-message {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    color: #f7ead0;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   NIKAH TITLE
+   ===================================================== */
+
+.nikah-title {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 48px;
+
+    color: #e7b84f;
+
+    margin:
+
+        18px 0 25px;
+
+    text-shadow:
+
+        0 0 15px
+        rgba(231,184,79,.3);
+}
+
+
+/* =====================================================
+   OPEN INVITATION BUTTON
+   ===================================================== */
+
+.open-button {
+
+    position: relative;
+
+    padding: 15px 42px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(214,168,79,.08),
+            rgba(214,168,79,.20)
+        );
+
+    border:
+
+        1px solid
+        #d6a84f;
+
+    border-radius: 5px;
+
+    color: #f1cd7b;
+
+    font-family:
+        "Cinzel",
+        serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .4s;
+
+    box-shadow:
+
+        0 0 18px
+        rgba(214,168,79,.15);
+}
+
+
+.open-button span {
+
+    margin-left: 8px;
+
+    color: #f1cd7b;
+}
+
+
+.open-button:hover {
+
+    background: #d6a84f;
+
+    color: #071a2f;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+
+        0 8px 30px
+        rgba(214,168,79,.4);
+}
+
+
+/* =====================================================
+   LANTERNS
+   ===================================================== */
+
+.lantern {
+
+    position: absolute;
+
+    z-index: 8;
+
+    width: 32px;
+
+    height: 52px;
+
+    border:
+
+        2px solid
+        #d6a84f;
+
+    border-radius:
+
+        8px 8px 12px 12px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffe6a0 0%,
+            #c58b25 35%,
+            #442a08 75%
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,210,100,.55);
+
+    animation:
+        lanternSwing
+        4s ease-in-out infinite;
+}
+
+
+.lantern::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 80px;
+
+    background: #d6a84f;
+
+    left: 50%;
+
+    bottom: 100%;
+
+    transform: translateX(-50%);
+}
+
+
+.lantern::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+
+    right: 5px;
+
+    bottom: -8px;
+
+    height: 7px;
+
+    border:
+
+        1px solid
+        #d6a84f;
+
+    border-radius: 50%;
+}
+
+
+.lantern-1 {
+
+    left: 13%;
+
+    top: 18%;
+
+}
+
+
+.lantern-2 {
+
+    left: 22%;
+
+    top: 8%;
+
+    transform: scale(.75);
+
+}
+
+
+.lantern-3 {
+
+    right: 13%;
+
+    top: 18%;
+
+}
+
+
+.lantern-4 {
+
+    right: 22%;
+
+    top: 8%;
+
+    transform: scale(.75);
+}
+
+
+@keyframes lanternSwing {
+
+    0%,100% {
+
+        transform:
+            rotate(-2deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(2deg)
+            translateY(8px);
+
+    }
+}
+
+
+/* =====================================================
+   FLOWER DECORATION
+   ===================================================== */
+
+.hero-flower {
+
+    position: absolute;
+
+    z-index: 7;
+
+    color: #f5dfb0;
+
+    font-size: 95px;
+
+    opacity: .85;
+
+    text-shadow:
+        0 0 20px rgba(255,220,160,.25);
+}
+
+
+.flower-left {
+
+    left: 3%;
+
+    bottom: 17%;
+
+    transform: rotate(-15deg);
+}
+
+
+.flower-right {
+
+    right: 3%;
+
+    bottom: 17%;
+
+    transform: rotate(15deg);
+}
+
+
+/* =====================================================
+   MOSQUE SILHOUETTE
+   ===================================================== */
+
+.mosque {
+
+    position: absolute;
+
+    z-index: 6;
+
+    bottom: -5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    height: 145px;
+
+    background:
+
+        linear-gradient(
+            to top,
+            #c99536 0 12%,
+            transparent 12%
+        );
+
+    opacity: .9;
+}
+
+
+/* Main dome */
+
+.dome {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    width: 100px;
+
+    height: 70px;
+
+    background:
+
+        radial-gradient(
+            ellipse at 50% 100%,
+            #dcae4d 0 65%,
+            transparent 66%
+        );
+}
+
+
+.dome-main {
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scale(1.5);
+}
+
+
+.dome-left {
+
+    left: 22%;
+
+    transform: scale(.75);
+}
+
+
+.dome-right {
+
+    right: 22%;
+
+    transform: scale(.75);
+}
+
+
+/* Crescent */
+
+.crescent {
+
+    position: absolute;
+
+    top: -35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #f2cf7b;
+
+    font-size: 35px;
+}
+
+
+/* Minarets */
+
+.minaret {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    width: 18px;
+
+    height: 115px;
+
+    background:
+
+        linear-gradient(
+            to right,
+            #a97927,
+            #f0c96d,
+            #a97927
+        );
+
+    border-radius:
+        3px 3px 0 0;
+}
+
+
+.minaret::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -12px;
+
+    left: -7px;
+
+    width: 32px;
+
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #e1b653;
+}
+
+
+.minaret::after {
+
+    content: "☾";
+
+    position: absolute;
+
+    top: -38px;
+
+    left: -3px;
+
+    color: #f2cf7b;
+
+    font-size: 18px;
+}
+
+
+.minaret-left {
+
+    left: 31%;
+}
+
+
+.minaret-right {
+
+    right: 31%;
+}
+
+
+.minaret-small-left {
+
+    left: 40%;
+
+    height: 70px;
+
+    transform: scale(.65);
+}
+
+
+.minaret-small-right {
+
+    right: 40%;
+
+    height: 70px;
+
+    transform: scale(.65);
+}
 /* =====================================================
    FLOATING LANTERNS
    ===================================================== */
